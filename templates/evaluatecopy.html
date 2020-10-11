@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Evaluate - Healthinic!</title>
+    <link rel="stylesheet" type="text/css" href="evaluate.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="{{url_for('static',filename='evaluate.css')}}" />
+    <link rel="stylesheet" href="app.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+       <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+       <title>Healthinic - Your Personal Health Clinic!</title>
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+       <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+       <meta name ="viewport" content="width=device-width, initial-scale=1">
+       <link rel ="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+       <script src ="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+       <script src ="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script> 
+       <meta name="viewport", content="width=device-width,initial-scale=1.0"> 
+       <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+       
+</head>
+
+<body>
+  <nav class="app">
+    <input type='checkbox' id='check'>
+    <label for="check" class="checkBtn">
+        <i class="fas fa-bars" id="threebars" style="padding-top: 20px"></i>
+    </label>
+    <label class="logo" id="app__headerImage">
+        
+        <a href="index.html"><img src="https://drive.google.com/uc?export=download&id=1A4jKLpG64ARhn9SdurjGrgHKNtW8X_RZ" alt="" width="200px"> </a>
+  </label>
+    
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+        <ul>
+            <li><a class="b" href="index.html" style="font-family: 'Rubik', sans-serif; text-decoration: none">Home</a></li>
+            <li><a class="b" href="#" style="font-family: 'Rubik', sans-serif; text-decoration: none">About Us</a></li>
+            <li><a class="b" href="#" style="font-family: 'Rubik', sans-serif; text-decoration: none">Contact Us</a></li>
+            <li><a class="b" href="#" style="font-family: 'Rubik', sans-serif; text-decoration: none">Services</a></li>
+            <li><a class="b" href="#" style="font-family: 'Rubik', sans-serif; text-decoration: none">Sign In/Sign Up</a></li>
+        </ul>
+    
+    
+  
+</nav>
+<div class="app__bodySolidTop"><p></p></div>
+  <div class="app__bodyWave">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <defs>
+            <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" style="stop-color:#42bd45;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#b4fa9a;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+        <path fill="url('#grad2')" fill-opacity="1" d="M0,256L48,229.3C96,203,192,149,288,149.3C384,149,480,203,576,208C672,213,768,171,864,149.3C960,128,1056,128,1152,160C1248,192,1344,256,1392,288L1440,320L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+
+        
+    </svg>
+</div> 
+
+
+<div>
+    <h2 style="color:white;position: absolute; font-family: 'Rubik',sans-serif; font-size:4.5vw; top:150px;margin-left:500px;opacity: 90%;">EVALUATE <br> <span class="tab"></span> YOURSELF</h1>
+</div>
+
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+<script id="1" src="searchBar_copy.js"></script>
+<div class="container">
+    <div class="box1">
+    <h2 id="boxText" style="font-family: 'Rubik', sans-serif;">SYMPTOMS</h2>
+
+    <div class="select-box">
+      <div class="options-container">
+        <div class="option">
+          <input
+            type="radio"
+            class="radio"
+            id="itching"
+            name="category"
+          />
+          <label for="itching">Itching</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="skin_rash" name="category" />
+          <label for="skin_rash">Skin Rashes</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="nodal_skin_erruptions" name="category" />
+          <label for="nodal_skin_erruptions">Nodal Skin Erruptions</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="continuous_sneezing" name="category" />
+          <label for="continuous_sneezing">Continuous Sneezing</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="shivering" name="category" />
+          <label for="shivering">Shivering</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="chills" name="category" />
+          <label for="chills">Chills</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="joint_pain" name="category" />
+          <label for="joint_pain">Joint Pain</label>
+        </div>
+        
+        <div class="option">
+          <input type="radio" class="radio" id="acidity" name="category" />
+          <label for="acidity">Acidity</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="ulcers_on_tongue" name="category" />
+          <label for="ulcers_on_tongue">Ulcers On Tongue</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="weight_gain" name="category" />
+          <label for="weight_gain">Weight Gain</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="fatigue" name="category" />
+          <label for="fatigue">Fatigue</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="spotting_ urination" name="category" />
+          <label for="spotting_ urination">Spotting Urination</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="burning_micturition" name="category" />
+          <label for="burning_micturition">Burning Micturition</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="vomiting" name="category" />
+          <label for="vomiting">Vomiting</label>
+        </div>
+
+        
+        <div class="option">
+          <input type="radio" class="radio" id="muscle_wasting" name="category" />
+          <label for="muscle_wasting">Muscle Wasting</label>
+        </div>
+        
+        <div class="option">
+          <input type="radio" class="radio" id="anxiety" name="category" />
+          <label for="anxiety">Anxiety</label>
+        </div>
+        
+        <div class="option">
+          <input type="radio" class="radio" id="cold_hands_and_feets" name="category" />
+          <label for="cold_hands_and_feets">Cold hands and feets</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="mood_swings" name="category" />
+          <label for="mood_swings">Mood Swings</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="weight_loss" name="category" />
+          <label for="weight_loss">Weight loss</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="restlessness" name="category" />
+          <label for="restlessness">Restlessness</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="lethargy" name="category" />
+          <label for="lethargy">Lethargy</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="patches_in_throat" name="category" />
+          <label for="patches_in_throat">Patches in throat</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="irregular_sugar_level" name="category" />
+          <label for="irregular_sugar_level">Irregular Sugar level</label>
+        </div>
+        
+        <div class="option">
+          <input type="radio" class="radio" id="yellowish_skin" name="category" />
+          <label for="yellowish_skin">Yellowish Skin</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="dark_urine" name="category" />
+          <label for="dark_urine">Dark Urine</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="nausea" name="category" />
+          <label for="nausea">Nausea</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="loss_of_appetite" name="category" />
+          <label for="loss_of_appetite">Loss of Appetite</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="pain_behind_the_eyes" name="category" />
+          <label for="pain_behind_the_eyes">Pain behind the eyes</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="back_pain" name="category" />
+          <label for="back_pain">Back pain</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="constipation" name="category" />
+          <label for="constipation">Constipation</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="abdominal_pain" name="category" />
+          <label for="abdominal_pain">Abdominal_pain</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="diarrhoea" name="category" />
+          <label for="diarrhoea">Diarrhoea</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="mild_fever" name="category" />
+          <label for="mild_fever">Mild fever</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="yellow_urine" name="category" />
+          <label for="yellow_urine">Yellow urine</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="yellowing_of_eyes" name="category" />
+          <label for="yellowing_of_eyes">Yellowing of eyes</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="acute_liver_failure" name="category" />
+          <label for="acute_liver_failure">Acute liver failure</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="fluid_overload" name="category" />
+          <label for="fluid_overload">Fluid overload</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="cough" name="category" />
+          <label for="cough">Cough</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="high_fever" name="category" />
+          <label for="high_fever">High Fever</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="sunken_eyes" name="category" />
+          <label for="sunken_eyes">Sunken Eyes</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="breathlessness" name="category" />
+          <label for="breathlessness">Breathlessness</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="sweating" name="category" />
+          <label for="sweating">Sweating</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="dehydration" name="category" />
+          <label for="dehydration">Dehydration</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="indigestion" name="category" />
+          <label for="indigestion">Indigestion</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="headache" name="category" />
+          <label for="headache">Headache</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="swelling_of_stomach" name="category" />
+          <label for="swelling_of_stomach">Swelling of Stomach</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="swelled_lymph_nodes" name="category" />
+          <label for="swelled_lymph_nodes">Swelled Lymph Nodes</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="malaise" name="category" />
+          <label for="malaise">Malaise</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="blurred_and_distorted_vision" name="category" />
+          <label for="blurred_and_distorted_vision">Blurred And Distorted Vision</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="phlegm" name="category" />
+          <label for="phlegm">Phlegm</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="throat_irritation" name="category" />
+          <label for="throat_irritation">Throat Irritation</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="redness_of_eyes" name="category" />
+          <label for="redness_of_eyes">Redness of Eyes</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="sinus_pressure" name="category" />
+          <label for="sinus_pressure">Sinus Pressure</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="congestion" name="category" />
+          <label for="congestion">Congestion</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="chest_pain" name="category" />
+          <label for="chest_pain">Chest Pain</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="weakness_in_limbs" name="category" />
+          <label for="weakness_in_limbs">Weakness in limbs</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="fast_heart_rate" name="category" />
+          <label for="fast_heart_rate">Fast heart rate</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="pain_during_bowel_movements" name="category" />
+          <label for="pain_during_bowel_movements">Pain during bowel movements</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="pain_in_anal_region" name="category" />
+          <label for="pain_in_anal_region">Pain in anal region</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="bloody_stool" name="category" />
+          <label for="bloody_stool">Bloody stool</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="irritation_in_anus" name="category" />
+          <label for="irritation_in_anus">Irritation in anus</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="neck_pain" name="category" />
+          <label for="neck_pain">Neck pain</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="dizziness" name="category" />
+          <label for="dizziness">Dizziness</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="cramps" name="category" />
+          <label for="cramps">cramps</label>
+        </div>
+        
+        <div class="option">
+          <input type="radio" class="radio" id="bruising" name="category" />
+          <label for="bruising">Bruising</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="obesity" name="category" />
+          <label for="obesity">Obesity</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="swollen_legs" name="category" />
+          <label for="swollen_legs">Swollen legs</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="swollen_blood_vessels" name="category" />
+          <label for="swollen_blood_vessels">Swollen blood vessels</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="puffy_face_and_eyes" name="category" />
+          <label for="puffy_face_and_eyes">Puffy face and eyes</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="enlarged_thyroid" name="category" />
+          <label for="enlarged_thyroid">Enlarged Thyroid</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="brittle_nails" name="category" />
+          <label for="brittle_nails">Brittle nails</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="swollen_extremeties" name="category" />
+          <label for="swollen_extremeties">Swollen Extremeties</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="excessive_hunger" name="category" />
+          <label for="excessive_hunger">Excessive hunger</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="extra_marital_contacts" name="category" />
+          <label for="extra_marital_contacts">Extra marital contacts</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="drying_and_tingling_lips" name="category" />
+          <label for="drying_and_tingling_lips">Drying and tingling lips</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="slurred_speech" name="category" />
+          <label for="slurred_speech">Slurred speech</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="knee_pain" name="category" />
+          <label for="knee_pain">Knee pain</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="hip_joint_pain" name="category" />
+          <label for="hip_joint_pain">Hip joint pain</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="muscle_weakness" name="category" />
+          <label for="muscle_weakness">Muscle Weakness</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="stiff_neck" name="category" />
+          <label for="stiff_neck">Stiff neck</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="swelling_joints" name="category" />
+          <label for="swelling_joints">Swelling joints</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="movement_stiffness" name="category" />
+          <label for="movement_stiffness">Movement Stiffness</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="spinning_movements" name="category" />
+          <label for="spinning_movements">Spinning movements</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="loss_of_balance" name="category" />
+          <label for="loss_of_balance">Loss of balance</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="unsteadiness" name="category" />
+          <label for="unsteadiness">Unsteadiness</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="weakness_of_one_body_side" name="category" />
+          <label for="weakness_of_one_body_side">Weakness of one body side</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="loss_of_smell" name="category" />
+          <label for="loss_of_smell">Loss of smell</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="bladder_discomfort" name="category" />
+          <label for="bladder_discomfort">Bladder discomfort</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="foul_smell_of urine" name="category" />
+          <label for="foul_smell_of urine">Foul smell of urine</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="continuous_feel_of_urine" name="category" />
+          <label for="continuous_feel_of_urine">Continuous feel of urine</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="passage_of_gases" name="category" />
+          <label for="passage_of_gases">Passage of gases</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="internal_itching" name="category" />
+          <label for="internal_itching">Internal itching</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="toxic_look_(typhos)" name="category" />
+          <label for="toxic_look_(typhos)">Toxic look (Typhos)</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="depression" name="category" />
+          <label for="depression">Depression</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="irritability" name="category" />
+          <label for="irritability">Irritability</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="muscle_pain" name="category" />
+          <label for="muscle_pain">Muscle pain</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="altered_sensorium" name="category" />
+          <label for="altered_sensorium">Altered sensorium</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="red_spots_over_body" name="category" />
+          <label for="red_spots_over_body">Red spots over body</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="belly_pain" name="category" />
+          <label for="belly_pain">Belly pain</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="abnormal_menstruation" name="category" />
+          <label for="abnormal_menstruation">Abnormal Menstruation</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="dischromic _patches" name="category" />
+          <label for="dischromic _patches">Dischromic patches</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="watering_from_eyes" name="category" />
+          <label for="watering_from_eyes">Watering from eyes</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="increased_appetite" name="category" />
+          <label for="increased_appetite">Increased appetite</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="polyuria" name="category" />
+          <label for="polyuria">Polyuria</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="pus_filled_pimples" name="category" />
+          <label for="pus_filled_pimples">Pus filled pimples</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="family_history" name="category" />
+          <label for="family_history">Family History</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="mucoid_sputum" name="category" />
+          <label for="mucoid_sputum">Mucoid Sputum</label>
+        </div>
+        
+        <div class="option">
+          <input type="radio" class="radio" id="rusty_sputum" name="category" />
+          <label for="rusty_sputum">Rusty Sputum</label>
+        </div>
+
+        <div class="option">
+            <input type="radio" class="radio" id="blackheads" name="category" />
+            <label for="blackheads">Blackheads</label>
+        </div>
+
+         <div class="option">
+            <input type="radio" class="radio" id="scurring" name="category" />
+            <label for="scurring">Scurring</label>
+         </div>
+
+          <div class="option">
+            <input type="radio" class="radio" id="skin_peeling" name="category" />
+            <label for="skin_peeling">Skin Peeling</label>
+          </div>
+
+          <div class="option">
+            <input type="radio" class="radio" id="silver_like_dusting" name="category" />
+            <label for="silver_like_dusting">Silver like dusting</label>
+          </div>
+
+          <div class="option">
+            <input type="radio" class="radio" id="small_dents_in_nails" name="category" />
+            <label for="small_dents_in_nails">Small dents in nails</label>
+          </div>
+
+          <div class="option">
+            <input type="radio" class="radio" id="inflammatory_nails" name="category" />
+            <label for="inflammatory_nails">Inflammatory nails</label>
+          </div>
+
+          <div class="option">
+            <input type="radio" class="radio" id="blister" name="category" />
+            <label for="blister">Blister</label>
+          </div>
+
+          <div class="option">
+            <input type="radio" class="radio" id="red_sore_around_nose" name="category" />
+            <label for="red_sore_around_nose">Red sore around nose</label>
+          </div>
+          
+        
+        <div class="option">
+          <input type="radio" class="radio" id="lack_of_concentration" name="category" />
+          <label for="lack_of_concentration">Lack of concentration</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="visual_disturbances" name="category" />
+          <label for="visual_disturbances">Visual Disturbances</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="receiving_blood_transfusion" name="category" />
+          <label for="receiving_blood_transfusion">Receiving blood transfusion</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="receiving_unsterile_injections" name="category" />
+          <label for="receiving_unsterile_injections">Receiving unsterile injections</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="coma" name="category" />
+          <label for="coma">Coma</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="stomach_bleeding" name="category" />
+          <label for="stomach_bleeding">Stomach bleeding</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="distention_of_abdomen" name="category" />
+          <label for="distention_of_abdomen">Distention of abdomen</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="history_of_alcohol_consumption" name="category" />
+          <label for="history_of_alcohol_consumption">History of alcohol consumption</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="fluid_overload" name="category" />
+          <label for="fluid_overload">Fluid Overload</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="blood_in_sputum" name="category" />
+          <label for="blood_in_sputum">Blood in sputum</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="palpitations" name="category" />
+          <label for="palpitations">Palpitations</label>
+        </div>
+        <div class="option">
+          <input type="radio" class="radio" id="painful_walking" name="category" />
+          <label for="painful_walking">Painful walking</label>
+        </div>
+        
+        <div class="option">
+          <input type="radio" class="radio" id="prominent_veins_on_calf" name="category" />
+          <label for="prominent_veins_on_calf">Prominent veins on calf</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="yellow_crust_ooze" name="category" />
+          <label for="yellow_crust_ooze">Yellow crust ooze</label>
+        </div>
+        
+        
+
+        
+
+
+
+
+
+
+
+      </div>
+
+      <div class="selected">
+        SYMPTOM 1
+      </div>
+
+      <div class="search-box">
+        <input type="text" style="font-family:'Rubik',sans-serif;" placeholder="Start Typing..." />
+      </div>
+    </div>
+
+    <h2></h2>
+
+    <div class="select-box">
+      <div class="options-container">
+        <div class="option">
+          <input
+            type="radio"
+            class="radio"
+            id="automobiles"
+            name="category"
+          />
+          <label for="automobiles">Automobiles</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="film" name="category" />
+          <label for="film">Film & Animation</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="science" name="category" />
+          <label for="science">Science & Technology</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="art" name="category" />
+          <label for="art">Art</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="music" name="category" />
+          <label for="music">Music</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="travel" name="category" />
+          <label for="travel">Travel & Events</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="sports" name="category" />
+          <label for="sports">Sports</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="news" name="category" />
+          <label for="news">News & Politics</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="tutorials" name="category" />
+          <label for="tutorials">Tutorials</label>
+        </div>
+      </div>
+
+      <div class="selected">
+        SYMPTOM 2
+      </div>
+
+      <div class="search-box">
+        <input type="text" style="font-family:'Rubik',sans-serif;" placeholder="Start Typing..." />
+      </div>
+    </div>
+
+    <h2></h2>
+
+    <div class="select-box">
+      <div class="options-container">
+        <div class="option">
+          <input
+            type="radio"
+            class="radio"
+            id="automobiles"
+            name="category"
+          />
+          <label for="automobiles">Automobiles</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="film" name="category" />
+          <label for="film">Film & Animation</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="science" name="category" />
+          <label for="science">Science & Technology</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="art" name="category" />
+          <label for="art">Art</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="music" name="category" />
+          <label for="music">Music</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="travel" name="category" />
+          <label for="travel">Travel & Events</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="sports" name="category" />
+          <label for="sports">Sports</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="news" name="category" />
+          <label for="news">News & Politics</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="tutorials" name="category" />
+          <label for="tutorials">Tutorials</label>
+        </div>
+      </div>
+
+      <div class="selected">
+        SYMPTOM 3
+      </div>
+
+      <div class="search-box">
+        <input type="text" style="font-family:'Rubik',sans-serif;" placeholder="Start Typing..." />
+      </div>
+    </div>
+    </div> 
+    
+    <div class="box2">
+    <h2></h2>
+
+    <div class="select-box">
+      <div class="options-container">
+        <div class="option">
+          <input
+            type="radio"
+            class="radio"
+            id="automobiles"
+            name="category"
+          />
+          <label for="automobiles">Automobiles</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="film" name="category" />
+          <label for="film">Film & Animation</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="science" name="category" />
+          <label for="science">Science & Technology</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="art" name="category" />
+          <label for="art">Art</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="music" name="category" />
+          <label for="music">Music</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="travel" name="category" />
+          <label for="travel">Travel & Events</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="sports" name="category" />
+          <label for="sports">Sports</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="news" name="category" />
+          <label for="news">News & Politics</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="tutorials" name="category" />
+          <label for="tutorials">Tutorials</label>
+        </div>
+      </div>
+
+      <div class="selected">
+        SYMPTOM 4
+      </div>
+
+      <div class="search-box">
+        <input type="text" style="font-family:'Rubik',sans-serif;" placeholder="Start Typing..." />
+      </div>
+    </div>
+    <h2></h2>
+
+    <div class="select-box">
+      <div class="options-container">
+        <div class="option">
+          <input
+            type="radio"
+            class="radio"
+            id="automobiles"
+            name="category"
+          />
+          <label for="automobiles">Automobiles</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="film" name="category" />
+          <label for="film">Film & Animation</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="science" name="category" />
+          <label for="science">Science & Technology</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="art" name="category" />
+          <label for="art">Art</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="music" name="category" />
+          <label for="music">Music</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="travel" name="category" />
+          <label for="travel">Travel & Events</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="sports" name="category" />
+          <label for="sports">Sports</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="news" name="category" />
+          <label for="news">News & Politics</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="tutorials" name="category" />
+          <label for="tutorials">Tutorials</label>
+        </div>
+      </div>
+
+      <div class="selected">
+        SYMPTOM 5
+      </div>
+
+      <div class="search-box">
+        <input type="text" style="font-family:'Rubik',sans-serif;" placeholder="Start Typing..." />
+      </div>
+    </div>
+
+    <h2></h2>
+
+    <div class="select-box">
+      <div class="options-container">
+        <div class="option">
+          <input
+            type="radio"
+            class="radio"
+            id="automobiles"
+            name="category"
+          />
+          <label for="automobiles">Automobiles</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="film" name="category" />
+          <label for="film">Film & Animation</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="science" name="category" />
+          <label for="science">Science & Technology</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="art" name="category" />
+          <label for="art">Art</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="music" name="category" />
+          <label for="music">Music</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="travel" name="category" />
+          <label for="travel">Travel & Events</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="sports" name="category" />
+          <label for="sports">Sports</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="news" name="category" />
+          <label for="news">News & Politics</label>
+        </div>
+
+        <div class="option">
+          <input type="radio" class="radio" id="tutorials" name="category" />
+          <label for="tutorials">Tutorials</label>
+        </div>
+      </div>
+
+      <div class="selected">
+        SYMPTOM 6
+      </div>
+
+      <div class="search-box">
+        <input type="text" style="font-family:'Rubik',sans-serif;" placeholder="Start Typing..." />
+      </div>
+    </div>
+    </div>
+
+
+  </div>
+
+  <script src="{{url_for('static',filename='searchBar.js')}}"></script>
+</div>
+
+<div class="submitButton">
+    <a id="buttonSubmit" href="#" style="font-family: 'Rubik',sans-serif;font-size: 24px;">Submit</a>
+        <script type="text/javascript">
+        const buttons=document.querySelectorAll('a');
+        buttons.forEach(btn=>{
+            btn.addEventListener('click',function(e){
+                let x= e.clientX - e.target.offsetLeft;
+                let y=e.clientY-e.target.offsetTop;
+
+                let ripples=document.createElement('span');
+                ripples.style.left=x+'px';
+                ripples.style.top=y+'px';
+                this.appendChild(ripples);
+
+                setTimeout(()=>{
+                    ripples.remove()
+                },1000);
+                
+            })
+        })
+        </script>
+</div>
+
+
+<div class="docIllust">
+    <img src="{{url_for('static',filename='evaluatePic.png')}}" alt="" style="float:right;width: 900px;margin-right:0;">
+</div>
+
+<div class="navbar">
+    <a href="#home" class="active">Home</a>
+    <a href="#news">News</a>
+    <a href="#contact">Contact</a>
+  </div>    
+</body>
+
+</html>

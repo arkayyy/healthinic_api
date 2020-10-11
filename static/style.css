@@ -1,0 +1,256 @@
+*{
+    padding:0;
+    margin:0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+
+
+/* Style the header */
+nav {
+    height: 110px;
+    background-color: #ededed;
+    border-bottom: 1px solid lightgray;
+    position: fixed;
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%;
+    z-index: 10;
+  }
+  
+  /* Page content */
+.app__body{
+    margin-top: 20px;
+    background-color: #ffffff;
+    height:170vh;
+    object-fit: contain;
+
+}
+
+#app__headerImage{
+    margin-left:20px;
+}
+
+.app__bodySolidTop{
+    background-color: #42bd45;
+    height:170px;
+
+}
+
+.app_bodyWave{
+    z-index: 1;
+}
+#app__symptomsInput{height:600px;
+    width:600px;
+    background-color:#ededed;
+    /*max-width: 100%;*/
+    /*position: relative;*/
+    margin-left: 1280px;
+    top:220px;
+    position: absolute;
+    float:right;
+    display: grid;
+}
+.checkbox{
+    margin-left:100px;
+}
+
+nav ul {
+
+    float:right;
+    margin-right:20px;
+margin-top: 15px;}
+
+nav ul li{
+    display: inline-block;
+      line-height: 80px;
+      margin:0 5px;
+}
+
+nav ul li a.b{color:black;}
+nav ul li a.b, nav ul li a.active{
+    
+    font-size:17px;
+    text-transform: uppercase;
+    padding: 10px 13px;
+    border-radius: 3px;
+      
+}
+
+#active{text-decoration: none;
+    color: white;
+    
+    background: #37c844;
+    transition: 0.5s;
+    
+}
+a.b:hover,#active:hover{text-decoration: none;
+    color: white;
+    
+    background: #37c844;
+    transition: 0.5s;
+}
+
+.checkBtn{
+    font-size: 30px;
+    color: black;
+    float:right;
+    line-height:80px;
+    margin-right:40px;
+    cursor:pointer;
+    display: none;
+}
+#check
+{
+    display:none;
+}
+
+@media(max-width:952px){
+    nav ul li a{
+        font-size:16px;
+    }
+}
+
+@media(max-width:952px){
+    .checkBtn{
+        display:block;
+    }
+    
+    ul{
+        position:fixed;
+        width:100%;
+        height:100vh;
+        text-align: center;
+        background: #ededed;
+        top:80px;
+        left:-100%;
+        transition: all .5s;
+
+    }
+    nav ul li{
+        display:block;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    a.hover,a.active{
+        background:  #37c844;
+        color:white;
+    }
+    #check:checked~ul{
+        left:0;
+    }
+}
+
+#threebars{
+    margin-top:20px;
+}
+
+.app__evaluateButton{margin-top: 50px;
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:200px;
+    height:60px;
+    text-align: center;
+    line-height:60px;
+    color:#fff;
+    font-size:24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: sans-serif;
+    box-sizing: border-box;
+    /*background: linear-gradient(90deg,#03a9f4,#f441a5,#ffeb3b,#03a9f4);*/
+    background: linear-gradient(90deg,#34cb5c,#37c2c8,#ffeb3b,#34cb5c);
+    background-size: 400%;
+    border-radius:30px;
+    z-index: 1;
+}
+
+
+.app__evaluateButton:hover{text-decoration: none;
+    color:white;
+    animation: animate 8s linear infinite;
+}
+@keyframes animate{
+    0%
+    {
+        background-position: 0%;
+    }
+    100%
+    {
+        background-position: 400%;
+    }
+}
+
+.app__evaluateButton:before{
+    content:'';
+    position: absolute;
+    top:-5px;
+    left:-5px;
+    right:-5px;
+    bottom:-5px;
+    z-index:-1;
+    background: linear-gradient(90deg,#34cb5c,#37c2c8,#ffeb3b,#34cb5c);
+    background-size: 400%;
+    border-radius:40px;
+    opacity:0;
+    transition: 0.5s;
+}
+
+.app__evaluateButton:hover:before{
+    filter:blur(20px);
+    opacity: 1;
+    animation: animate 8s linear infinite;
+
+}
+
+a.bb{
+    text-decoration: none;
+}
+
+.app__graphics1{
+    max-width:100%;
+}
+
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Style the links inside the navigation bar */
+  /*.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }*/
+  
+  /* Change the color of links on hover */
+  .navbar a:hover {
+    background-color: #37c844;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .navbar a.active {
+    background-color:black;
+    color:  #37c844;
+  }
+.boxx{
+    object-fit: cover;
+
+}
+
+bottomInsta:hover{
+background: #37c844;
+transition: 0.5s;
+}
