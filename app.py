@@ -1,4 +1,4 @@
-from flask import Flask, render_template,request, jsonify
+from flask import Flask, render_template,request, jsonify, url_for
 
 app=Flask(__name__)
 
@@ -13,20 +13,34 @@ def evaluate():
 
 @app.route('/evaluate.html',methods=["POST"])
 def getInput():
-    category1=request.form["knk"]
-    return category1
+    inputs=request.form
+    for key,value in inputs.items():
+        if key=='category1':
+            return value 
     
 
 
 
 @app.route('/test.html')
 def disp():
-    return render_template('test.html')
+    return render_template('test1.html')
 
-@app.route('/test.html',methods=['POST'])
+@app.route('/test.html',methods=['GET','POST'])
 def inputt():
-    name=request.form["knk"]
-    return name
+    s1=""
+    s2=""
+    if request.method=="POST":
+        name=request.form
+        n1=request.form
+        #for key,value in name.items():
+            #if key=='category':
+                #s1=value
+            #if key=="category1":
+                #s2=value
+    return n1
+        #return name
+    #else:
+        #return render_template("test.html")
 
 if __name__=='__main__':
     app.run(debug=True)
