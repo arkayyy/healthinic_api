@@ -248,7 +248,7 @@ x_train , x_test , y_train , y_test = train_test_split(X , y , test_size = 0.2 ,
 from sklearn.ensemble import RandomForestClassifier
 model = RandomForestClassifier(n_estimators = 100)
 model.fit(x_train , y_train)
-model.score (x_test , y_test)  #using Random Forest Classifier ML model to predict
+print (model.score (x_test , y_test)) #using Random Forest Classifier ML model to predict
 
 
 # In[41]:
@@ -270,26 +270,26 @@ model.score (x_test , y_test)  #using Random Forest Classifier ML model to predi
 # In[12]:
 
 
-import pickle 
-with open("symptom_to_disease_model" , "wb") as f: 
-    pickle.dump(model,f)
+#import pickle 
+#with open("symptom_to_disease_model" , "wb") as f: 
+  #  pickle.dump(model,f)
 
 
 # In[13]:
 
 
-import json
-columns = {
-    "data_columns" : [col for col in X.columns]
-}
+#import json
+#columns = {
+ #   "data_columns" : [col for col in X.columns]
+#}
 
-with open("columns.json","w") as f :
-    f.write(json.dumps(columns))
+#with open("columns.json","w") as f :
+  #  f.write(json.dumps(columns))
 
 
 # In[ ]:
 input_vector = zeros(len(symptoms_dict))
-input_vector[[symptoms_dict['itching'], symptoms_dict['skin_rash']]] = 1  #giving sample symptoms to the model to predict a disease
+input_vector[[symptoms_dict['cough'], symptoms_dict['skin_rash']]] = 1  #giving sample symptoms to the model to predict a disease
 #rf_clf.predict_proba([input_vector])
 ans=model.predict([input_vector])   #predicting disease finally
 for key,value in disease_dict.items():
